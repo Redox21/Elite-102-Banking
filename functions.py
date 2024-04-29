@@ -91,10 +91,15 @@ def account_creation():
 # This function will allow users to edit information regarding accounts, including accounttype, useraccount (PIN required)
 # def account_modification():
 
+def account_modification():
+    # SELECT statement ==> Be able to return specfic database information
+    # Then from fields, UPDATE records for users account
+
 
 
 
 # This fucntion will allow users to close their bank accounts. (PIN, accountnumber, and useraccount required)
+
 def account_closure():
 
     username_selection = input("Enter a Username: ")
@@ -115,9 +120,9 @@ def account_closure():
 
             query = "DELETE FROM empolyes WHERE useraccount = %s"
 
-            account_deletion = ""
+            # account_deletion = ""
 
-            query.execute(query, )
+            # query.execute(query, )
 
             mydb.commit()
 
