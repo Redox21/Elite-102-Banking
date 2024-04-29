@@ -1,37 +1,32 @@
 import mysql.connector
 import functions as fun
 
+# Database Connection
+# Make Sure to update database, otherwise you can't reestablish a connection.
+mydb = mysql.connector.connect(user="root", database="empolyes", password="0148Uapm@*Ss")
+mycursor = mydb.cursor()
 
- # Database Connection
 
-connection = mysql.connector.connect(user = "root", database = "empolyes", password = "0148Uapm@*Ss")
+# Query to fetch all rows from 'accounts' table
+query = "SELECT * FROM accounts"
+# Executing the query
+mycursor.execute(query)
 
-cursor = connection.cursor()
- 
-# Queries for testQuery all rows 
 
-# query = ("SELECT * FROM accounts")
-# query = "INSERT into empolyes (id, useraccount, accountnumber, accountpin, netbalance, acounttype)"
-
-# # Exectuting the queries
-
-# print("\n")
-# for item in cursor:
-
-#     print(item)
+# Fetching all rows and printing them
+for item in mycursor.fetchall():
+    print(item)
 
 def main():
     # Call the menu function
-    fun.menu()
+    fun.menu()  
 
 if __name__ == "__main__":
     main()
 
-# Commiting the connection, then closing it.
-
-cursor.close()
-
-connection.close()
+# Closing cursor and connection
+mycursor.close()
+mydb.close()
 
 # id, useraccount, accountnumber, accountpin, netbalance, acounttype
 
