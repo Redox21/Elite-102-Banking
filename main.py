@@ -1,5 +1,6 @@
 import mysql.connector
 import functions as fun
+import unittest
 
 # Database Connection
 # Make Sure to update database, otherwise you can't reestablish a connection.
@@ -23,6 +24,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+    # unittest.main()
 
 # Closing cursor and connection
 mycursor.close()
